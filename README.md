@@ -1,21 +1,42 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/Aj7Sf-j_)
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-718a45dd9cf7e7f842a935f5ebbe5719a5e09af4491e668f4dbf3b35d5cca122.svg)](https://classroom.github.com/online_ide?assignment_repo_id=10880863&assignment_repo_type=AssignmentRepo)
-# Using pretrained CNNs for image classification
+# Assignment 3 - Using pretrained CNNs for image classification
 
-In the previous assignments involving classification, we were performing a kind of simple feature extraction on images by making them greyscale and flattening them to a single vector. This vector of pixel values was then used as the input for some kind of classification model.
+## Contribution
+The code in this assignment was developed in collaboration with my classmates.
 
-For this assignment, we're going to be working with an interesting kind of cultural phenomenon - fashion. On UCloud, you have access to a dataset of *Indo fashion* taken from this [Kaggle dataset](https://www.kaggle.com/datasets/validmodel/indo-fashion-dataset). There is a paper which goes along with it on *arXiv.org*, which you can read [here](https://arxiv.org/abs/2104.02830).
+## Description of the Assignment
+For this assignment, we will be working with a dataset of Indo fashion images. The goal is to train a classifier using a pretrained Convolutional Neural Network (CNN) model, specifically VGG16. The code will save the training and validation history plots as well as the classification report.
 
-Your instructions for this assignment are short and simple:
+## Data
+The dataset used in this assignment is available on UCloud. Unfortunately, the dataset is around 3GB in size and cannot be uploaded to the repository. To access the dataset, follow these steps:
+1. Visit the [Kaggle dataset](https://www.kaggle.com/myusername/indo-fashion-dataset).
+2. Download the dataset from the provided link.
+3. Save the dataset in a folder named "431824" on UCloud.
 
-- You should write code which trains a classifier on this dataset using a *pretrained CNN like VGG16*
-- Save the training and validation history plots
-- Save the classification report
+## Methods
+The code uses TensorFlow and Keras to implement the image classification task. It loads the VGG16 model with pretrained weights and freezes the layers to avoid retraining. Additional classifier layers are added on top of the VGG16 model. The data is generated using TensorFlow's ImageDataGenerator and fed into the model for training. The model is compiled with a learning rate schedule and categorical cross-entropy loss. After training, the model predicts the labels for the test dataset, and a classification report is generated.
 
-## Tips
+## Usage and Reproducibility
 
-- You should not upload the data to your repo - it's around 3GB in size.
-  - Instead, you should document in the README file where your data comes from, how a user should find it, and where it should be saved in order for your code to work correctly.
-- The data comes already split into training, test, and validation datasets. You can use these in a ```TensorFlow``` data generator pipeline like we saw in class this week - you can see an example of that [here](https://stackoverflow.com/questions/42443936/keras-split-train-test-set-when-using-imagedatagenerator).
-- There are a lot of images, around 106k in total. Make sure to reserve enough time for running your code!
-- The image labels are in the metadata folder, stored as JSON files. These can be read into ```pandas``` using ```read_json()```. You can find the documentation for that online.
+### Prerequisites
+To run the code, ensure that you have the following installed:
+- Python 3
+- TensorFlow
+- Keras
+- pandas
+- numpy
+- OpenCV
+- scikit-learn
+- matplotlib
+
+### Obtaining the Dataset
+1. Findthe Kaggle dataset [here](https://www.kaggle.com/myusername/indo-fashion-dataset).
+2. Download the dataset and save it in the folder names "images".
+
+### Running the Script
+1. Clone this GitHub repository to your local machine.
+2. Install the required packages by navigating to the root folder and running the following command in your terminal: `pip install -r requirements.txt`
+3. Run the script using the following command: `python3 main.py`
+4. The script will train the classifier, save the learning curve plots in the "out" folder, and generate a classification report in the "out" folder.
+
+## Discussion of Results
+The code was executed on a smaller subset of the data, which impacted the results negatively. Due to resource limitations on uCloud and time constraints, only a small fraction of the dataset was used for training and evaluation. As a result, the accuracy and performance of the model are lower compared to what could have been achieved with the entire dataset.

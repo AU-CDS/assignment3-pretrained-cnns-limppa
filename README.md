@@ -17,19 +17,8 @@ The code uses TensorFlow and Keras to implement the image classification task. I
 
 ## Usage and Reproducibility
 
-### Prerequisites
-To run the code, ensure that you have the following installed:
-- Python 3
-- TensorFlow
-- Keras
-- pandas
-- numpy
-- OpenCV
-- scikit-learn
-- matplotlib
-
 ### Obtaining the Dataset
-1. Findthe Kaggle dataset [here](https://www.kaggle.com/myusername/indo-fashion-dataset).
+1. Find the Kaggle dataset [here](https://www.kaggle.com/myusername/indo-fashion-dataset).
 2. Download the dataset and save it in the folder names "images".
 
 ### Running the Script
